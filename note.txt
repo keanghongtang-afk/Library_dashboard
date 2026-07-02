@@ -1,0 +1,11 @@
+need to implement in frontend:
+
+// Example: generate once per browser and persist it
+const device_id = localStorage.getItem("device_id") 
+  ?? (localStorage.setItem("device_id", crypto.randomUUID()), localStorage.getItem("device_id"));
+
+fetch("/login", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({ email, password, device_id })
+});
