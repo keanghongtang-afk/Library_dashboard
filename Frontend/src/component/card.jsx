@@ -1,9 +1,11 @@
 
-export default function Card({header, content}){
+export default function Card({ header, content }) {
     return (
-        <div className="card card-3 p-2 m-3">
-            <h5>{header}</h5>
-            <p>{content}</p>
+        <div className="col-6 col-md-4 col-lg-4 mb-3">
+            <div className="border border-2 rounded p-3 h-100">
+                <h5>{header}</h5>
+                <p>{content}</p>
+            </div>
         </div>
     );
 }

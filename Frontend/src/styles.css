@@ -1,7 +1,8 @@
-body{
-    font-family: "Geist Pixel",sans-serif;
+body {
+    font-family: "Geist Pixel", sans-serif;
     background-color: #F1FAEE;
 }
+
 /* Authentication Part */
 .auth-interface {
     position: relative;
@@ -13,25 +14,35 @@ body{
     margin-top: 100px;
 }
 
-.Login-container, .auth-body, .Singup-container {
+.Login-container,
+.auth-body,
+.Singup-container {
     flex-direction: column;
     gap: 15px;
 }
 
-.Login-container, .Singup-container{
+.Login-container,
+.Singup-container {
     width: 450px;
 }
 
-.Login-container input, .Singup-container input, .Singup-container button, .Login-container button{
+.Login-container input,
+.Singup-container input,
+.Singup-container button,
+.Login-container button {
     width: 400px;
     height: 40px;
     border-radius: 10px;
 }
-.Singup-container button, .Login-container button{
+
+.Singup-container button,
+.Login-container button {
     background-color: #2D6A4F;
     color: azure;
 }
-.Singup-container button:hover, .Login-container button:hover{
+
+.Singup-container button:hover,
+.Login-container button:hover {
     background-color: #40916C;
     color: azure;
     font-size: medium;
@@ -39,64 +50,90 @@ body{
 
 .login {
     position: absolute;
-    top: 0;left: 51.5%;
+    top: 0;
+    left: 51.5%;
     background-color: azure;
-    width: 450px;height: 100%;
+    width: 450px;
+    height: 100%;
     animation: slidelogin 0.5s ease;
 }
 
 .signup {
     position: absolute;
-    top: 0;right: 51.5%;
+    top: 0;
+    right: 51.5%;
     background-color: azure;
     border-end-end-radius: -10px;
-    width: 450px;height: 100%;
+    width: 450px;
+    height: 100%;
     animation: slidesignup 0.5s ease;
 }
 
-.login, .signup {
+.login,
+.signup {
     text-align: center;
     font-size: large;
     flex-direction: column;
 }
 
 @keyframes slidesignup {
-    from{right: 0;}
-    to{right: 51.5%;}
+    from {
+        right: 0;
+    }
+
+    to {
+        right: 51.5%;
+    }
 }
 
 @keyframes slidelogin {
-    from{left: 0;}
-    to{left: 51.5%;}
+    from {
+        left: 0;
+    }
+
+    to {
+        left: 51.5%;
+    }
 }
 
-@media (max-width: 700px){
-    .login{
+@media (max-width: 768px) {
+    .login {
         width: 100%;
         height: 375px;
-        top: 40%;left: 0;
+        top: 40%;
+        left: 0;
     }
+
     .signup {
         width: 100%;
         height: 270px;
-        top: 0;left: 0;
+        top: 0;
+        left: 0;
     }
+
     @keyframes slidesignup {
-        from{
+        from {
             top: 40%;
             height: 360px;
         }
-        to{
+
+        to {
             top: 0;
             height: 270px;
         }
     }
 
     @keyframes slidelogin {
-        from{top: 0;}
-        to{top: 40%;}
+        from {
+            top: 0;
+        }
+
+        to {
+            top: 40%;
+        }
     }
 }
+
 /* Navbar Part */
 .nav nav img {
     width: 70px;
@@ -106,7 +143,8 @@ body{
 /* Home */
 .img-background {
     position: absolute;
-    top: -18px;left: 3px;
+    top: -18px;
+    left: 3px;
     z-index: -1;
     width: 99.6%;
     height: 550px;
@@ -119,7 +157,79 @@ body{
 }
 
 /* Card */
-.card {
-    width: 300px;
-    height: 150px;
+
+/* Hero Section */
+.arrow {
+    height: 50px;
+}
+
+.arrow:hover {
+    background-color: #2D6A4F;
+    color: #F1FAEE;
+}
+
+.arrow:active {
+    background-color: #40916C;
+}
+
+
+/* 3D Book */
+.book-3d {
+    width: 150px;
+    height: 200px;
+    cursor: pointer;
+}
+
+.book-3d-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transform: rotateY(-25deg);
+    transition: transform 0.5s ease;
+}
+
+.book-3d:hover .book-3d-inner {
+    transform: rotateY(-10deg);
+}
+
+.book-3d-cover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 4px 8px 8px 4px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+    backface-visibility: hidden;
+}
+
+/* Spine — left edge of the book */
+.book-3d-spine {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 30px;
+    height: 100%;
+    background: linear-gradient(to right, #1B4332, #2D6A4F);
+    transform: rotateY(90deg) translateZ(0px) translateX(-15px);
+    transform-origin: left center;
+    border-radius: 4px 0 0 4px;
+}
+
+/* Page edges — right side */
+.book-3d-pages {
+    position: absolute;
+    top: 3px;
+    right: -12px;
+    width: 12px;
+    height: calc(100% - 6px);
+    background: repeating-linear-gradient(to right,
+            #f5f5f0,
+            #f5f5f0 1px,
+            #e8e8e3 1px,
+            #e8e8e3 2px);
+    transform: rotateY(90deg);
+    transform-origin: left center;
+    border-radius: 0 2px 2px 0;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
 }
