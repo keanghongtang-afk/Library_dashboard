@@ -6,13 +6,13 @@ import { BrowserRouter,Routes, Route } from "react-router-dom";
 import { useState } from "react";
 
 export default function App() {
-  const [islogin, Setislogin] = useState(false);
+  const [islogin, Setislogin] = useState(true);
 
   return (
     <BrowserRouter>
     <Navbar islogin={islogin}/>
       <Routes>
-        <Route path="/" element={<Home />}/>
+        <Route path="/" element={<Home islogin={islogin}/>}/>
         <Route path="/auth-page" element={<Auth />}/>
       </Routes>
     </BrowserRouter>

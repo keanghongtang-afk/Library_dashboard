@@ -19,7 +19,8 @@ function Auth() {
           p-3
           ">
             <div className="Login-container
-            d-flex justify-content-center align-items-center ">
+            d-flex justify-content-center align-items-center "
+            id="login">
                 <div className="auth-header">
                     <h2>Login</h2>
                 </div>
@@ -34,7 +35,8 @@ function Auth() {
                 </div>
             </div>
             <div className="Singup-container
-            d-flex justify-content-center align-items-center">
+            d-flex justify-content-center align-items-center"
+            id="signup">
                 <div className="auth-header">
                     <h2>SignUp</h2>
                 </div>

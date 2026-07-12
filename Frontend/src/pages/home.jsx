@@ -1,5 +1,7 @@
 import Card from "../component/card";
-function Home() {
+import Footer from "../component/footer";
+import Side from "../component/sidebar";
+function Home(islogin) {
 
   const cards = [
     {
@@ -27,9 +29,42 @@ function Home() {
       content: "Track borrowed books, due dates, and your reading history.",
     },
   ];
+  const brief = [
+    {
+      cover: "cover.jpg",
+      title: "The adventure of sherlock"
+    },
+    {
+      cover: "cover.jpg",
+      title: "The adventure of sherlock"
+    },
+    {
+      cover: "cover.jpg",
+      title: "The adventure of sherlock"
+    },
+    {
+      cover: "cover.jpg",
+      title: "The adventure of sherlock"
+    },
+    {
+      cover: "cover.jpg",
+      title: "The adventure of sherlock"
+    },
+    {
+      cover: "cover.jpg",
+      title: "The adventure of sherlock"
+    }
+  ]
 
-  return (
-    <div className="home mt-3 position-relative">
+  return (islogin?
+    <div className="board row">
+      <Side />
+      <div className="col-lg-8 col-md-8 col-sm-10">
+        Home
+      </div>
+    </div>
+    :
+    <div className="welcome-page mt-3 position-relative">
       <img src="/background.jpg" alt="background" className="img-background" />
       <div className="welcome-msg d-flex justify-content-center align-items-center flex-column">
         <h1 className="fs-2 text-center">Welcome to NewLife Library</h1>
@@ -46,11 +81,11 @@ function Home() {
       </div>
       <h3>Browse Book here!</h3>
       <div className="row g-4 books-brief justify-content-center">
-        {cards.map((card, index) => (
-          <div className="col-sm-12 col-md-6 col-lg-4 d-flex justify-content-center">
+        {brief.map((book) => (
+          <div className="col-sm-12 col-md-4 col-lg-2 d-flex justify-content-center">
             <div className="book-3d">
               <div className="book-3d-inner">
-                <img src="/book-cover/cover.jpg" alt="cover" className="book-3d-cover" />
+                <img src={`/book-cover/${book.cover}`} alt={book.title} className="book-3d-cover" />
                 <div className="book-3d-spine"></div>
                 <div className="book-3d-pages"></div>
               </div>
@@ -58,6 +93,7 @@ function Home() {
           </div>
         ))}
       </div>
+      <Footer />
     </div>
   );
 }

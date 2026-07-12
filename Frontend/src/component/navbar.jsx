@@ -6,12 +6,7 @@ function Navbar({islogin}){
         d-flex justify-content-between align-items-center
         p-3">
             <Link to="/" className="text-decoration-none text-dark"><h3>NewLife Library</h3></Link>
-            <nav className="d-flex justify-content-between align-items-center w-50 fs-3">
-                <Link to="/">Borrow</Link>
-                <Link to="/" className="text-decoration-none text-dark">Return</Link>
-                <Link to="/" className="text-decoration-none text-dark">Favorite</Link>
-                <img src="/profile/profile.jpg" alt="profile-img" className="rounded-circle"/>
-            </nav>
+            <Link to="/profile" className="text-decoration-none text-dark" ><img src="/profile/profile.jpg" alt="profile-img" className="rounded-circle" width={"50px"} height={"50px"}/></Link>
         </div>
         :
         <div className="nav 
